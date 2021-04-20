@@ -12,11 +12,12 @@
 	<artifactId>browsergame-rts-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>browsergame-rts-backend</name>
-	<description>A attempt to create a simple RTS browserga,e</description>
+	<description>A attempt to create a simple RTS browsergame</description>
 	<properties>
 		<java.version>16</java.version>
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
 		<swagger.version>2.9.2</swagger.version>
+		<org.json.version>20210307</org.json.version>
 	</properties>
 
 	<repositories>
@@ -141,6 +142,12 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${org.json.version}</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

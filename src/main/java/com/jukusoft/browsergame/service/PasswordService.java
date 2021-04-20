@@ -3,7 +3,7 @@ package com.jukusoft.browsergame.service;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-//@Service
+@Service
 public class PasswordService {
 
     private PasswordEncoder passwordEncoder;
