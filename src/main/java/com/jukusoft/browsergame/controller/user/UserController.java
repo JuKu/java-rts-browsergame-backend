@@ -4,6 +4,7 @@ import com.jukusoft.browsergame.dao.UserDAO;
 import com.jukusoft.browsergame.entity.user.UserEntity;
 import com.jukusoft.browsergame.service.PasswordService;
 import com.jukusoft.browsergame.service.setting.GlobalSettingsService;
+import com.jukusoft.browsergame.service.setting.SettingDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.HtmlUtils;
+
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -26,9 +29,11 @@ public class UserController {
 
     @PostMapping("/api/register")
     public ResponseEntity<String> register(@RequestBody RegistrationRequest request) {
-        if (!globalSettingsService.getSetting("registration.password").isPresent() && !globalSettingsService.getSetting("registration.password").get().getValue().equals("none")) {
+        Optional<SettingDTO> registerPasswordSetting = globalSettingsService.getSetting("registration.password");
+
+        if (!registerPasswordSetting.isPresent() && !registerPasswordSetting.get().getValue().equals("none")) {
             //first, check password
-            if (!globalSettingsService.getSetting("registration.password").get().getValue().equals(request.getPassword())) {
+            if (!registerPasswordSetting.get().getValue().equals(request.getPassword())) {
                 //wrong registration password
                 return ResponseEntity.status(HttpStatus.FORBIDDEN).body("registration password is wrong!");
             }
