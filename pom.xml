@@ -128,7 +128,7 @@
 		<dependency>
 			<groupId>com.jukusoft</groupId>
 			<artifactId>spring-jwt-authentification</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 
 		<!-- swagger.io - Api documentation -->
