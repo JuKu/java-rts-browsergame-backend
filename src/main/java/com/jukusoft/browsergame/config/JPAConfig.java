@@ -60,7 +60,7 @@ public class JPAConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("com.jukusoft.letterbox", "com.jukusoft.authentification.jwt");
+        em.setPackagesToScan("com.jukusoft.browsergame", "com.jukusoft.authentification.jwt");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
