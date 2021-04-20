@@ -26,6 +26,7 @@ script:
 
 after_success:
   - "echo $TRAVIS_JDK_VERSION"
+  - echo "$TRAVIS_BRANCH"
 #  - "[[ $TRAVIS_BRANCH == \"master\" ]] && [[ $TRAVIS_JDK_VERSION == \"openjdk16\" ]] && { mvn deploy --settings .maven.xml -DuniqueVersion=false; };"
 
 notifications:
