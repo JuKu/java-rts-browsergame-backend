@@ -26,10 +26,12 @@ public class UserController {
 
     @PostMapping("/api/register")
     public ResponseEntity<String> register(@RequestBody RegistrationRequest request) {
-        //first, check password
-        if (!globalSettingsService.getSetting("registration.password").get().getValue().equals(request.getPassword())) {
-            //wrong registration password
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("registration password is wrong!");
+        if (!globalSettingsService.getSetting("registration.password").isPresent() && !globalSettingsService.getSetting("registration.password").get().getValue().equals("none")) {
+            //first, check password
+            if (!globalSettingsService.getSetting("registration.password").get().getValue().equals(request.getPassword())) {
+                //wrong registration password
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("registration password is wrong!");
+            }
         }
 
         String username = HtmlUtils.htmlEscape(request.getUsername(), "UTF-8");
