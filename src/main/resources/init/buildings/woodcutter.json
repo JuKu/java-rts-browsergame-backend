@@ -1,0 +1,14 @@
+{
+	"name": "woodcutter",
+	"title": "Woodcutter",
+	"min_level": 1,
+	"max_level": 25,
+	"levels": [
+		{
+			"level": 1,
+			"build_costs": ["wood:50", "clay:50", "iron:50", "population:10"],
+			"build_time_seconds":15,
+			"production": ["wood:35"]
+		}
+	]
+}
