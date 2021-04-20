@@ -22,7 +22,7 @@ public class BuildingEntity extends AbstractEntity {
 
     @Size(min = 2, max = 900)
     @Column(name = "name", unique = true, nullable = false, updatable = true)
-    @NotEmpty(message = "value is required")
+    @NotEmpty(message = "unique name is required")
     private String uniqueName;
 
     @Size(min = 2, max = 255)
