@@ -18,6 +18,20 @@
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
 		<swagger.version>2.9.2</swagger.version>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>oss.sonatype.org-snapshot</id>
+			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -109,6 +123,12 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jukusoft</groupId>
+			<artifactId>spring-jwt-authentification</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<!-- swagger.io - Api documentation -->
