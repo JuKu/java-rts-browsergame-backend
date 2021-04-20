@@ -43,5 +43,10 @@
 		"token": "global.can.see.api.version",
 		"title": "Can see api version",
 		"type": "global"
+	},
+	{
+		"token": "global.can.create.game.worlds",
+		"title": "Can create new game worlds",
+		"type": "global"
 	}
 ]

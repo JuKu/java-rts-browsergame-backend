@@ -6,6 +6,7 @@
 			"global.super.admin",
 			"global.can.see.own.projects",
 			"global.settings.can.see.all.settings",
+			"global.can.create.game.worlds",
 			"global.can.see.api.version"
 		]
 	}
