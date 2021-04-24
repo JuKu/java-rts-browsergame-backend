@@ -3,10 +3,7 @@ package com.jukusoft.browsergame.entity.island;
 import com.jukusoft.browsergame.entity.general.AbstractEntity;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.Cacheable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -18,7 +15,11 @@ import javax.validation.constraints.Size;
 })
 @Cacheable//use second level cache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class BuildingEntity extends AbstractEntity {
+public class BuildingTypeEntity extends AbstractEntity {
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "island_id", nullable = false, updatable = false)
+    private IslandEntity island;
 
     @Size(min = 2, max = 900)
     @Column(name = "name", unique = true, nullable = false, updatable = true)

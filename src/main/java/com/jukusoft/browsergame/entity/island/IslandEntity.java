@@ -8,6 +8,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "islands", indexes = {
@@ -30,5 +32,12 @@ public class IslandEntity extends AbstractEntity {
 
     @Embedded
     private Coord pos;
+
+    @Column(name = "points", unique = false, nullable = false, updatable = true)
+    private int points;
+
+    @OneToMany(mappedBy = "island", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Column(name = "island")
+    private List<BuildingTypeEntity> buildings = new ArrayList<>();
 
 }

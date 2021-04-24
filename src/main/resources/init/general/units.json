@@ -1,0 +1,16 @@
+[
+	{
+		"key": "spion",
+		"tech_levels": {
+			"1": {
+				"name": "Spionage Floss"
+			},
+			"2": {
+				"name": "Spionage Schiff"
+			},
+			"3": {
+				"name": "Spionage U-Boot"
+			}
+		}
+	}
+]
