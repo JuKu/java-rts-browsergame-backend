@@ -38,6 +38,6 @@ public class IslandEntity extends AbstractEntity {
 
     @OneToMany(mappedBy = "island", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @Column(name = "island")
-    private List<BuildingTypeEntity> buildings = new ArrayList<>();
+    private List<BuildingDataEntity> buildings = new ArrayList<>();
 
 }

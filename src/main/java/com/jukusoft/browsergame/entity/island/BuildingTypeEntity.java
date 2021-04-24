@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "buildings", indexes = {
+@Table(name = "building_types", indexes = {
         //@Index(columnList = "email", name = "email_idx"),
 }, uniqueConstraints = {
         //@UniqueConstraint(columnNames = "username", name = "username_uqn")
@@ -16,10 +16,6 @@ import javax.validation.constraints.Size;
 @Cacheable//use second level cache
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class BuildingTypeEntity extends AbstractEntity {
-
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "island_id", nullable = false, updatable = false)
-    private IslandEntity island;
 
     @Size(min = 2, max = 900)
     @Column(name = "name", unique = true, nullable = false, updatable = true)
