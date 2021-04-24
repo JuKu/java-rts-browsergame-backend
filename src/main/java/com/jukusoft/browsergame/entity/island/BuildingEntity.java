@@ -1,4 +1,4 @@
-package com.jukusoft.browsergame.entity.building;
+package com.jukusoft.browsergame.entity.island;
 
 import com.jukusoft.browsergame.entity.general.AbstractEntity;
 import org.hibernate.annotations.CacheConcurrencyStrategy;

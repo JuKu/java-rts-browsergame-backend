@@ -1,6 +1,6 @@
 package com.jukusoft.browsergame.dao;
 
-import com.jukusoft.browsergame.entity.GameWorldEntity;
+import com.jukusoft.browsergame.entity.gameworld.GameWorldEntity;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 

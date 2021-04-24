@@ -1,6 +1,6 @@
-package com.jukusoft.browsergame.entity;
+package com.jukusoft.browsergame.entity.gameworld;
 
-import com.jukusoft.browsergame.entity.gameworld.IslandEntity;
+import com.jukusoft.browsergame.entity.island.IslandEntity;
 import com.jukusoft.browsergame.entity.general.AbstractEntity;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
