@@ -1,14 +1,13 @@
 package com.jukusoft.browsergame.entity;
 
+import com.jukusoft.browsergame.entity.gameworld.IslandEntity;
 import com.jukusoft.browsergame.entity.general.AbstractEntity;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.Cacheable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Table(name = "game_worlds", indexes = {
@@ -27,6 +26,10 @@ public class GameWorldEntity extends AbstractEntity {
 
     @Column(name = "max_players", unique = false, nullable = false, updatable = true)
     private int maxPlayers = 64000;
+
+    @OneToMany(mappedBy = "gameworld", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Column(name = "gameworld")
+    private List<IslandEntity> islands;
 
     /**
      * width in cells
