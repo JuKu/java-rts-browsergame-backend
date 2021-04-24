@@ -26,6 +26,14 @@ public class ResourceImporter implements InitializingBean {
     @Autowired
     private ResourceTypeDAO resourceTypeDAO;
 
+    protected ResourceImporter(ResourceTypeDAO resourceTypeDAO) {
+        this.resourceTypeDAO = resourceTypeDAO;
+    }
+
+    public ResourceImporter() {
+        //
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         if (!ImportUtils.isInitialImportEnabled()) {
@@ -34,7 +42,7 @@ public class ResourceImporter implements InitializingBean {
 
         logger.info("create or update resource types");
 
-        JSONArray jsonArray = new JSONArray(ResourceUtils.readResourceFile("init/general/resources"));
+        JSONArray jsonArray = new JSONArray(ResourceUtils.readResourceFile("init/general/resources.json"));
 
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject json = jsonArray.getJSONObject(i);

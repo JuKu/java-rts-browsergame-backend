@@ -39,6 +39,10 @@ public class ResourceTypeEntity {
         this.icon = icon;
     }
 
+    protected ResourceTypeEntity() {
+        //
+    }
+
     public String getKey() {
         return key;
     }
