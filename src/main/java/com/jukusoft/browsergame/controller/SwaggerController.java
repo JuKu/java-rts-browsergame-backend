@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * Controller for swagger documentation.
  *
- * @author Vincent Gerber
+ * @author Justin Kuenzel
  */
 @Controller
 public class SwaggerController {
