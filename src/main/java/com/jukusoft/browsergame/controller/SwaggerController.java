@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Controller for swagger documentation.
+ * the spring Controller for swagger documentation which redirects the url.
  *
  * @author Justin Kuenzel
  */
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SwaggerController {
 
     /**
-     * Redirect all requests for /swagger to the html page.
+     * redirect /swagger to the swagger controller.
      *
-     * @return Redirect String
+     * @return redirect url
      */
     @GetMapping("/swagger")
     public String redirectToSwaggerUI() {
